@@ -232,15 +232,14 @@ ctx.beginPath();
 ctx.moveTo(-30, 0);
 ctx.lineTo(100, 0);
 ctx.stroke();
-ctx.beginPath();
+ctx.beginPath();//begins to draw the small circle
 ctx.arc(0, 0, 10, 0, Math.PI * 2, true);
 ctx.fill();
 ctx.restore();
 
 ctx.restore(); //restores the default state
 
-requestAnimationFrame(clock);
+requestAnimationFrame(clock); //animate the clock
 }
 
-requestAnimationFrame(clock);
-//clock();
+requestAnimationFrame(clock); //this keeps it going permanently
