@@ -177,6 +177,7 @@ ctx.restore();
 
 //Draw hour marks/lines
 ctx.save();
+ctx.strokeStyle = lineColor.value; //changes the hour marks dynamically
 ctx.lineWidth = 4;
 for (let i = 0; i < 12; i++) {
 ctx.beginPath(); // to initiate the drawing 
@@ -188,6 +189,7 @@ ctx.stroke();
 ctx.restore();
 
 //Draw minutes lines or tick marks
+ctx.strokeStyle = lineColor.value;
 ctx.save();
 for (let i = 0; i < 60; i++) {
     if (i % 5 !== 0) {  //removes additional marks off of the hour hands
