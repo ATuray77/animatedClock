@@ -182,7 +182,7 @@ ctx.restore();
 //Draw minutes lines or tick marks
 ctx.save();
 for (let i = 0; i < 60; i++) {
-    if (i % 5 !== 0) {
+    if (i % 5 !== 0) {  //removes additional marks off of the hour hands
         ctx.beginPath();
      
     ctx.moveTo(117, 0);//gives us shorter lines
@@ -202,22 +202,22 @@ const sec = now.getSeconds();
 
 //Draw hour hand
 ctx.save();
-ctx.rotate((Math.PI / 6) * hr + (Math.PI / 360) * min + (Math.PI / 21600) * sec);
-ctx.strokeStyle = 'maroon';
-ctx.lineWidth = 14;
-ctx.beginPath();
-ctx.moveTo(-20, 0);
+ctx.rotate((Math.PI / 6) * hr + (Math.PI / 360) * min + (Math.PI / 21600) * sec);// targets wherever the hour hand is
+ctx.strokeStyle = 'maroon'; //changes the hour hand color
+ctx.lineWidth = 14; //changes the line width
+ctx.beginPath(); // begin executing 
+ctx.moveTo(-20, 0); //line begins at -20 of x axis and 80 of y-axis
 ctx.lineTo(80, 0);
 ctx.stroke();
-ctx.restore(); //restores the default state
+ctx.restore(); //
 
 //Draw minute hand
 ctx.save();
-ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec);
+ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec); //positioning for the minutes
 ctx.strokeStyle = 'maroon';
 ctx.lineWidth = 10;
 ctx.beginPath();
-ctx.moveTo(-20, 0);
+ctx.moveTo(-28, 0);
 ctx.lineTo(112, 0);
 ctx.stroke();
 ctx.restore();
