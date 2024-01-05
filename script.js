@@ -144,7 +144,7 @@
 const faceColor = document.getElementById('face-color');
 const borderColor = document.getElementById('border-color');
 const lineColor = document.getElementById('line-color');
-const largeColor = document.getElementById('large-hand-color');
+const largeHandColor = document.getElementById('large-hand-color');
 const secondHandColor = document.getElementById('second-hand-color');
 
 function clock(){
@@ -189,7 +189,7 @@ ctx.stroke();
 ctx.restore();
 
 //Draw minutes lines or tick marks
-ctx.strokeStyle = lineColor.value;
+ctx.strokeStyle = lineColor.value; //changes the line colors dynamically
 ctx.save();
 for (let i = 0; i < 60; i++) {
     if (i % 5 !== 0) {  //removes additional marks off of the hour hands
@@ -213,7 +213,7 @@ const sec = now.getSeconds();
 //Draw hour hand
 ctx.save();
 ctx.rotate((Math.PI / 6) * hr + (Math.PI / 360) * min + (Math.PI / 21600) * sec);// targets wherever the hour hand is
-ctx.strokeStyle = 'maroon'; //changes the hour hand color
+ctx.strokeStyle = largeHandColor.value; //changes the hour hand color
 ctx.lineWidth = 14; //changes the line width
 ctx.beginPath(); // begin executing 
 ctx.moveTo(-20, 0); //line begins at -20 of x axis and 80 of y-axis
@@ -224,7 +224,7 @@ ctx.restore(); //
 //Draw minute hand
 ctx.save();
 ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec); //positioning for the minutes
-ctx.strokeStyle = 'maroon';
+ctx.strokeStyle = largeHandColor.value;
 ctx.lineWidth = 10;
 ctx.beginPath();
 ctx.moveTo(-28, 0);
