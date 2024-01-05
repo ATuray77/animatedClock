@@ -169,6 +169,7 @@ ctx.save();
 ctx.beginPath(); //calls this before making any changes to canvas
 ctx.lineWidth = 14; //changes the line width
 ctx.strokeStyle = borderColor.value; //changes the line colors only here
+ctx.fillStyle = faceColor.value; //changes the face color dynamically
 ctx.arc(0, 0, 140, 0, Math.PI * 2, true); // formats the circle
 ctx.stroke(); //call stroke() to dray anything on canvas
 ctx.fill(); // call fill to fill up the clock face
