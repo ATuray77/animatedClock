@@ -235,8 +235,8 @@ ctx.restore();
 //Draw sec hand
 ctx.save();
 ctx.rotate((sec * Math.PI / 30));
-ctx.strokeStyle = '#ff7f50';
-ctx.fillStyle = '#ff7f50';
+ctx.strokeStyle = secondHandColor.value;
+ctx.fillStyle = secondHandColor.value;
 ctx.lineWidth = 6;
 ctx.beginPath();
 ctx.moveTo(-30, 0);
