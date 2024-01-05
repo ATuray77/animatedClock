@@ -148,7 +148,7 @@ const ctx = canvas.getContext('2d')
 //Setup Canvas
 ctx.save(); //save the default state
 ctx.clearRect(0, 0, 500, 500); //clears the canvas
-ctx.translate(250, 250); //put the clock(0, 0) in the middle of the canvas
+ctx.translate(250, 150); //put the clock(0, 0) in the middle of the canvas
 ctx.rotate(-Math.PI / 2) //rotate clock -90deg. If not the clock will act in a weird rotation
 
 //set default styles
