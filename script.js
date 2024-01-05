@@ -162,32 +162,32 @@ ctx.save();
 ctx.beginPath(); //calls this before making any changes to canvas
 ctx.lineWidth = 14; //changes the line width
 ctx.strokeStyle = '#800000'; //changes the line colors only here
-ctx.arc(0, 0, 140, 0, Math.PI * 2, true); // draws the circle
-ctx.stroke();
-ctx.fill();
+ctx.arc(0, 0, 140, 0, Math.PI * 2, true); // formats the circle
+ctx.stroke(); //call stroke() to dray anything on canvas
+ctx.fill(); // call fill to fill up the clock face
 ctx.restore();
 
 //Draw hour marks/lines
 ctx.save();
 ctx.lineWidth = 4;
 for (let i = 0; i < 12; i++) {
-ctx.beginPath();
-ctx.rotate(Math.PI / 6)
-ctx.moveTo(100, 0);
-ctx.lineTo(120, 0)
+ctx.beginPath(); // to initiate the drawing 
+ctx.rotate(Math.PI / 6) // gives us 12 hour marks or hands
+ctx.moveTo(100, 0); //begin to draw
+ctx.lineTo(120, 0);  //drawing ends here. Rotate makes this possible
 ctx.stroke();  
 }
 ctx.restore();
 
-//Draw minute lines
+//Draw minutes lines or tick marks
 ctx.save();
 for (let i = 0; i < 60; i++) {
     if (i % 5 !== 0) {
         ctx.beginPath();
-    
-    ctx.moveTo(117, 0);
-    ctx.lineTo(120, 0)
-    ctx.stroke();  
+     
+    ctx.moveTo(117, 0);//gives us shorter lines
+    ctx.lineTo(120, 0) 
+    ctx.stroke();  //always execute the drawing
     }
     ctx.rotate(Math.PI / 30)
 }
