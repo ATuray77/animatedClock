@@ -152,17 +152,17 @@ ctx.translate(250, 250); //put the clock(0, 0) in the middle of the canvas
 ctx.rotate(-Math.PI / 2) //rotate clock -90deg. If not the clock will act in a weird rotation
 
 //set default styles
-ctx.strokeStyle = 'white';
-ctx.fillStyle = 'grey';
-ctx.lineWidth = 5;
-ctx.lineCap = 'round'
+ctx.strokeStyle = 'white'; //line colors
+ctx.fillStyle = 'grey';  //color of the face
+ctx.lineWidth = 5; //size of the line
+ctx.lineCap = 'round'  //makes the clock hands rounded
 
 //draw clock face/border
 ctx.save();
-ctx.beginPath();
-ctx.lineWidth = 14;
-ctx.strokeStyle = '#800000';
-ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
+ctx.beginPath(); //calls this before making any changes to canvas
+ctx.lineWidth = 14; //changes the line width
+ctx.strokeStyle = '#800000'; //changes the line colors only here
+ctx.arc(0, 0, 140, 0, Math.PI * 2, true); // draws the circle
 ctx.stroke();
 ctx.fill();
 ctx.restore();
