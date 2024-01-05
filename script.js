@@ -140,6 +140,13 @@
 
 // requestAnimationFrame(step);
 
+//bringing all the needed inputs
+const faceColor = document.getElementById('face-color');
+const borderColor = document.getElementById('border-color');
+const lineColor = document.getElementById('line-color');
+const largeColor = document.getElementById('large-hand-color');
+const secondHandColor = document.getElementById('second-hand-color');
+
 function clock(){
 const now = new Date();
 const canvas = document.getElementById('canvas');
@@ -161,7 +168,7 @@ ctx.lineCap = 'round'  //makes the clock hands rounded
 ctx.save();
 ctx.beginPath(); //calls this before making any changes to canvas
 ctx.lineWidth = 14; //changes the line width
-ctx.strokeStyle = '#800000'; //changes the line colors only here
+ctx.strokeStyle = borderColor.value; //changes the line colors only here
 ctx.arc(0, 0, 140, 0, Math.PI * 2, true); // formats the circle
 ctx.stroke(); //call stroke() to dray anything on canvas
 ctx.fill(); // call fill to fill up the clock face
